@@ -1,0 +1,24 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Launch Tools App",
+      "program": "${workspaceFolder}/projects/tools-app/target/debug/tools-app",
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Launch Tools App Final",
+      "program": "${workspaceFolder}/projects/tools-app-final/target/debug/tools-app-final",
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

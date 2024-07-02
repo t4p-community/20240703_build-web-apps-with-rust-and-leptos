@@ -1,0 +1,67 @@
+{
+  "name": "Rust Leptos Dev",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "DavidAnson.vscode-markdownlint",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "extensions.ignoreRecommendations": true,
+        "editor.formatOnSave": true,
+        "explorer.compactFolders": false,
+        "terminal.integrated.tabs.enabled": false,
+        "editor.minimap.enabled": false,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "files.autoSave": "afterDelay",
+        "workbench.startupEditor": "none",
+        "window.zoomLevel": 1,
+        "rust-analyzer.check.command": "clippy",
+        "rust-analyzer.rustfmt.extraArgs": [
+          "--config",
+          "max_width=100"
+        ],
+        "rust-analyzer.procMacro.ignored": {
+          "leptos_macro": [
+            "server"
+          ],
+        },
+        "rust-analyzer.rustfmt.overrideCommand": [
+          "leptosfmt",
+          "--stdin",
+          "--rustfmt"
+        ],
+        "rust-analyzer.cargo.features": [
+          "ssr",
+          "hydrate"
+        ],
+        "[markdown]": {
+          "editor.wordWrap": "on",
+          "editor.indentSize": 2,
+          "editor.rulers": []
+        },
+        "[rust]": {
+          "editor.defaultFormatter": "rust-lang.rust-analyzer",
+          "editor.formatOnSave": true,
+          "editor.tabSize": 4,
+          "editor.inlayHints.enabled": "off",
+          "editor.rulers": [
+            100
+          ]
+        }
+      }
+    }
+  },
+  "dockerFile": "Dockerfile"
+}
