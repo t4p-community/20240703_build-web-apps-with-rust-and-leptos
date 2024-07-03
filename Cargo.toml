@@ -1,6 +1,4 @@
 [workspace]
 resolver = "2"
 
-members = [
-  "projects/tools-app-final",
-]
+members = ["projects/tools-app-final", "projects/tools-app"]

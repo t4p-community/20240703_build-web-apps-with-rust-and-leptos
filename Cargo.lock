@@ -2803,6 +2803,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "tools-app"
+version = "0.1.0"
+dependencies = [
+ "actix-files",
+ "actix-web",
+ "console_error_panic_hook",
+ "http 1.1.0",
+ "leptos",
+ "leptos_actix",
+ "leptos_meta",
+ "leptos_router",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "tools-app-final"
 version = "0.1.0"
 dependencies = [
