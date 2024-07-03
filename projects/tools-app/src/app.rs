@@ -2,6 +2,14 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+// use crate::components::parent_child::parent_child_home::ParentChildHome;
+// use crate::components::parent_child::parent_child_write_signal::Parent as ParentWriteSignal;
+
+use crate::components::parent_child::{
+    parent_child_callback::Parent as ParentCallback, parent_child_home::ParentChildHome,
+    parent_child_write_signal::Parent as ParentWriteSignal,
+};
+
 #[component]
 pub fn Container(children: Children) -> impl IntoView {
     view! { <div class="container">{children()}</div> }
@@ -33,6 +41,9 @@ pub fn NavBar() -> impl IntoView {
                 <li class="menu-item">
                     <a href="/">"Home"</a>
                 </li>
+                <li class="menu-item">
+                    <a href="/parent-child">"Parent Child"</a>
+                </li>
             </ul>
         </nav>
     }
@@ -45,11 +56,23 @@ pub fn SideBar() -> impl IntoView {
 
 #[component]
 pub fn Content() -> impl IntoView {
+    // Pipe-Syntax: Rust, Ruby?
+    // let my_closure = || view! { <p>"Click an example link."</p> };
+    // C#, JavaScript, Java
+    // let my_closure = () => view! { <p>"Click an example link."</p> }
+    // Python
+    // let my_closure = lambda: view! { <p>"Click an example link."</p> }
+
     view! {
         <Router>
             <main id="content">
                 <Routes>
                     <Route path="" view=HomePage/>
+                    <Route path="/parent-child" view=ParentChildHome>
+                        <Route path="write-signal" view=ParentWriteSignal/>
+                        <Route path="callback" view=ParentCallback/>
+                        <Route path="" view=|| view! { <p>"Click an example link."</p> }/>
+                    </Route>
                     <Route path="/*any" view=NotFound/>
                 </Routes>
             </main>
