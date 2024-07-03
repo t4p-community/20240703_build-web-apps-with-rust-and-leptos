@@ -13,6 +13,11 @@ pub fn ParentChildHome() -> impl IntoView {
                 <li>
                     <a href="/parent-child/callback">"Callback"</a>
                 </li>
+                <li>
+                    <a href="/parent-child/closure-instead-of-callback">
+                        "Closure instead of Callback"
+                    </a>
+                </li>
             </ul>
             <Outlet/>
         </div>
